@@ -9,7 +9,7 @@ options.add_argument(
     "user-agent = Mozilla/5.0 (Windows NT 10.0; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0")
 options.add_argument('blink-settings=imagesEnabled=false')
 options.add_argument("--disable-javascript")
-driver = webdriver.Chrome('chromedriver', options=options)
+driver = webdriver.Chrome('./chromedriver', options=options)
 employee_id = '120451'
 temperature = round(random.uniform(36.1, 37.3), 1)
 
