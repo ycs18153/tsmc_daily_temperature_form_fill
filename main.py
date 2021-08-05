@@ -6,7 +6,15 @@ import time
 
 
 def daily_temperature_form_fill():
-    driver = webdriver.Chrome('./chromedriver')
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--no-sandbox")
+    options.add_argument(
+        "user-agent = Mozilla/5.0 (Windows NT 10.0; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0")
+    options.add_argument('blink-settings=imagesEnabled=false')
+    options.add_argument("--disable-javascript")
+    driver = webdriver.Chrome('./chromedriver', chrome_options=options)
     employee_id = '120451'
     temperature = round(random.uniform(36.1, 37.3), 1)
 
@@ -28,8 +36,8 @@ def daily_temperature_form_fill():
         "//button[@class='btn small next-button survey-page-button user-generated notranslate']").click()
 
 
-schedule.every().day.at('07:30').do(daily_temperature_form_fill)
+schedule.every().day.at('19:01').do(daily_temperature_form_fill)
 if __name__ == '__main__':
     while True:
         schedule.run_pending()
-        time.sleep(10)
+        time.sleep(2)
