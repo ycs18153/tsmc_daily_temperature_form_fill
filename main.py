@@ -36,7 +36,7 @@ def daily_temperature_form_fill():
         "//button[@class='btn small next-button survey-page-button user-generated notranslate']").click()
 
 
-schedule.every().day.at('19:01').do(daily_temperature_form_fill)
+schedule.every().day.at('19:20').do(daily_temperature_form_fill)
 if __name__ == '__main__':
     while True:
         schedule.run_pending()
