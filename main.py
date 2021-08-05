@@ -11,13 +11,13 @@ options.add_argument(
 options.add_argument('blink-settings=imagesEnabled=false')
 options.add_argument("--disable-javascript")
 options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-driver = webdriver.Chrome(
-    'executable_path=os.environ.get("CHROMEDRIVER_PATH")', chrome_options=options)
+driver = webdriver.Chrome(executable_path=os.environ.get(
+    "CHROMEDRIVER_PATH"), chrome_options=options)
 employee_id = '120451'
 temperature = round(random.uniform(36.1, 37.3), 1)
 
 driver.get('https://zh.surveymonkey.com/r/EmployeeHealthCheck')
-
+print("browser opening")
 driver.find_element_by_id('683674386_4495696088').click()
 driver.find_element_by_id('683674383').send_keys(employee_id)
 driver.find_element_by_id('683674388_4495696090').click()
@@ -32,5 +32,5 @@ driver.find_element_by_id('683674397_4495696166').click()
 driver.find_element_by_id('683674385_4495696080').click()
 driver.find_element_by_xpath(
     "//button[@class='btn small next-button survey-page-button user-generated notranslate']").click()
-
+print("task done")
 driver.close()
