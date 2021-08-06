@@ -36,7 +36,6 @@ def auto_fill(employee_id):
         driver.find_element_by_xpath(
             "//button[@class='btn small next-button survey-page-button user-generated notranslate']").click()
         print("task done")
-        driver.close()
         return True
     except ValueError:
         print("error")
