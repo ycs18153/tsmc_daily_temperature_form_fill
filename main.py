@@ -7,7 +7,7 @@ import multiprocessing as mp
 def auto_fill(employee_id):
     try:
         options = webdriver.ChromeOptions()
-        # options.add_argument('--headless')
+        options.add_argument('--headless')
         options.add_argument("--disable-dev-shm-usage")
         options.add_argument("--no-sandbox")
         options.add_argument(
