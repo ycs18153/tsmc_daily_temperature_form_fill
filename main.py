@@ -41,27 +41,12 @@ def auto_fill(employee_id, vaccinated):
 
 
 if __name__ == "__main__":
-    processes = []
-    p1 = mp.Process(target=auto_fill, args=('120451', True, ))
-    processes.append(p1)
-    p2 = mp.Process(target=auto_fill, args=('120513', False, ))
-    processes.append(p2)
-    p3 = mp.Process(target=auto_fill, args=('120557', False, ))
-    processes.append(p3)
-    p4 = mp.Process(target=auto_fill, args=('120535', False, ))
-    processes.append(p4)
-    p5 = mp.Process(target=auto_fill, args=('120487', False, ))
-    processes.append(p5)
-    p6 = mp.Process(target=auto_fill, args=('120649', False, ))
-    processes.append(p6)
-
-    for p in processes:
-        p.start()
-    for p in processes:
-        p.join()
     # 元倉: 120513, 培權: 120557, 有璿: 120535, 錢玟: 120487, 書文: 120649
-    # employee_with_vaccine = ['120451']
-    # employee_without_vaccine = ['120513', '120557', '120535', '120487', '120649']
-    # pool = mp.Pool(os.cpu_count())
-    # res = pool.map(vaccine, employee_with_vaccine)
-    # print(res)
+    employee_with_vaccine = ['120451']
+    employee_without_vaccine = [
+        '120513', '120557', '120535', '120487', '120649']
+
+    for i in range(len(employee_with_vaccine)):
+        auto_fill(employee_with_vaccine[i], True)
+    for j in range(len(employee_without_vaccine)):
+        auto_fill(employee_without_vaccine[i], False)
