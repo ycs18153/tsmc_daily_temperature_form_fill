@@ -1,5 +1,6 @@
 from selenium import webdriver
 import random
+import time
 import os
 import multiprocessing as mp
 
@@ -49,4 +50,4 @@ if __name__ == "__main__":
     for i in range(len(employee_with_vaccine)):
         auto_fill(employee_with_vaccine[i], True)
     for j in range(len(employee_without_vaccine)):
-        auto_fill(employee_without_vaccine[i], False)
+        auto_fill(employee_without_vaccine[j], False)
