@@ -21,6 +21,7 @@ def auto_fill(employee_id, vaccinated):
     temperature = round(random.uniform(36.1, 37.3), 1)
     driver.get('https://zh.surveymonkey.com/r/EmployeeHealthCheck')
     print("browser opening")
+    print(f'{employee_id}\'s task begin')
     driver.find_element_by_id('683674386_4495696088').click()
     driver.find_element_by_id('683674383').send_keys(employee_id)
     driver.find_element_by_id('683674388_4495696090').click()
@@ -38,7 +39,7 @@ def auto_fill(employee_id, vaccinated):
     driver.find_element_by_id('683674385_4495696080').click()
     driver.find_element_by_xpath(
         "//button[@class='btn small next-button survey-page-button user-generated notranslate']").click()
-    print("task done")
+    print(f'{employee_id}\'s task done')
 
 
 if __name__ == "__main__":
