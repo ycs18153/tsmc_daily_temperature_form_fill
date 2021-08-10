@@ -42,10 +42,10 @@ def auto_fill(employee_id, vaccinated):
 
 
 if __name__ == "__main__":
-    # 元倉: 120513, 培權: 120557, 有璿: 120535, 錢玟: 120487, 書文: 120649
-    employee_with_vaccine = ['120451']
+    # 元倉: 120513, 培權: 120557, 有璿: 120535, 錢玟: 120487, 書文: 120649, 可芸: 120650, 郁婷: 120524
+    employee_with_vaccine = ['120451', '120487']
     employee_without_vaccine = [
-        '120513', '120557', '120535', '120487', '120649']
+        '120513', '120557', '120535', '120649', '120650', '120524']
 
     for i in range(len(employee_with_vaccine)):
         auto_fill(employee_with_vaccine[i], True)
