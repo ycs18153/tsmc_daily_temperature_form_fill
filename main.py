@@ -3,6 +3,7 @@ import random
 import time
 import os
 import multiprocessing as mp
+import selenium.webdriver.support.ui as ui
 
 
 def auto_fill(employee_id, vaccinated):
@@ -19,9 +20,11 @@ def auto_fill(employee_id, vaccinated):
         "CHROMEDRIVER_PATH"), chrome_options=options)
     # driver = webdriver.Chrome('./chromedriver', chrome_options=options)
     temperature = round(random.uniform(36.1, 37.3), 1)
+    wait = ui.WebDriverWait(driver, 10)
     driver.get('https://zh.surveymonkey.com/r/EmployeeHealthCheck')
     print("browser opening")
     print(f'{employee_id}\'s task begin')
+    time.sleep(3)
     driver.find_element_by_id('683674386_4495696088').click()
     driver.find_element_by_id('683674383').send_keys(employee_id)
     driver.find_element_by_id('683674388_4495696090').click()
@@ -50,5 +53,7 @@ if __name__ == "__main__":
 
     for i in range(len(employee_with_vaccine)):
         auto_fill(employee_with_vaccine[i], True)
+    time.sleep(3)
     for j in range(len(employee_without_vaccine)):
         auto_fill(employee_without_vaccine[j], False)
+    time.sleep(3)
